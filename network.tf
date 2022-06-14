@@ -1,11 +1,13 @@
-resource "azurerm_resource_group" "network" {
-  name     = "my-resources"
-  location = "centralus"
-}
 
 module "network" {
   source  = "app.terraform.io/cmm-snapolitano/network/azurerm"
   version = "3.5.0"
   # insert required variables here
-  resource_group_name = azurerm_resource_group.network.name
+  resource_group_name = azurerm_resource_group.myresourcegroup.name
 }
+
+#resource "azurerm_resource_group" "network" {
+#n  name     = "my-resources"
+#  location = "centralus"
+#}
+
